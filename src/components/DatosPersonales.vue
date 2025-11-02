@@ -37,7 +37,10 @@ const telefono = '+54 9 2604-123456';
 <style scoped>
 h1 {
   font-size: 2.5rem;
+  font-weight: 600;
+  color: lab(89.24% -10.53 67.87); /* 🔹 agrega este color */
 }
+
 
 p {
   font-size: 1.2rem;
