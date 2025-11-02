@@ -1,0 +1,62 @@
+@import './base.css';
+/*base.css: establece los valores globales de css, de la página web
+en este archivo main van a estar todos los estilos que vamos a utilizar
+Este estilo lo dejamos, le da estilo a toda la aplicación, dice el máximo ancho, el margin, el padding, el peso de la fuente*/
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+/*cambiamos esto que nos dice las etiquetas a, green, dice que cdo pase algo se va a convertir en verde
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+Por esto*/
+a{/*aquí le decimos que todas las etiquetas a (hipervículos) no estén subrayados y le damos un color (blanco) de la variable root que se encuentra en el base.css (--vt-c-white: ...)*/
+  text-decoration: none;
+  color: var(--vt-c-white);
+}
+
+/*Esta es la media query de los hover: hover la quitamos tb
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+*/
+/*Agregamos esta media query pensando en el responsivo desde ahora por esta regla: */
+@media (max-width: 768px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+  }
+}
+@media (min-width: 1024px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+}
+
+
+/*Estas la quitaremos
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
+*/

@@ -1,0 +1,123 @@
+/* color palette from <https://github.com/vuejs/theme> */
+/*Dejaremos los rot para crear las variables globales del color, las dejamos por defecto*/
+/*Preservaremos las reglas globales css: root y todo lo demás tal cual está*/
+/* Definimos variables de color globales (root = nivel más alto del documento) */
+:root {
+  --vt-c-white: #ffffff;              /* Blanco puro */
+  --vt-c-white-soft: #f8f8f8;         /* Blanco suave (ligeramente gris) */
+  --vt-c-white-mute: #f2f2f2;         /* Blanco aún más apagado */
+
+  --vt-c-black: #181818;              /* Negro principal */
+  --vt-c-black-soft: #222222;         /* Negro más suave */
+  --vt-c-black-mute: #282828;         /* Negro apagado */
+
+  --vt-c-indigo: #2c3e50;             /* Azul oscuro (usado para texto o encabezados) */
+
+  /* Colores para divisores o bordes en modo claro */
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29); /* línea gris semitransparente */
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12); /* línea más clara */
+
+  /* Colores para divisores o bordes en modo oscuro */
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65); /* línea gris más fuerte */
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48); /* línea gris más suave */
+
+  /* Colores de texto en modo claro */
+  --vt-c-text-light-1: var(--vt-c-indigo);          /* texto principal: azul oscuro */
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);      /* texto secundario: gris */
+
+  /* Colores de texto en modo oscuro */
+  --vt-c-text-dark-1: var(--vt-c-white);            /* texto principal: blanco */
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);    /* texto secundario: gris claro */
+}
+
+/* Variables semánticas (más fáciles de usar en el resto del proyecto) */
+:root {
+  --color-background: var(--vt-c-white);            /* color de fondo principal */
+  --color-background-soft: var(--vt-c-white-soft);  /* fondo alternativo suave */
+  --color-background-mute: var(--vt-c-white-mute);  /* fondo apagado */
+
+  --color-border: var(--vt-c-divider-light-2);      /* color de borde normal */
+  --color-border-hover: var(--vt-c-divider-light-1);/* color de borde al pasar el mouse */
+
+  --color-heading: var(--vt-c-text-light-1);        /* color de títulos */
+  --color-text: var(--vt-c-text-light-1);           /* color de texto general */
+
+  --section-gap: 160px;                             /* espacio vertical entre secciones */
+}
+
+/* ======= MODO OSCURO ======= */
+/* Detecta si el sistema del usuario está en "modo oscuro" */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);          /* fondo negro */
+    --color-background-soft: var(--vt-c-black-soft);/* fondo suave negro */
+    --color-background-mute: var(--vt-c-black-mute);/* fondo apagado negro */
+
+    --color-border: var(--vt-c-divider-dark-2);     /* bordes en gris */
+    --color-border-hover: var(--vt-c-divider-dark-1);/* borde hover más claro */
+
+    --color-heading: var(--vt-c-text-dark-1);       /* títulos blancos */
+    --color-text: var(--vt-c-text-dark-2);          /* texto gris claro */
+  }
+}
+
+/* ======= ESTILOS GLOBALES ======= */
+
+/* Aplica box-sizing a todos los elementos y sus pseudo-elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;     /* hace que padding y borde no sumen al ancho total */
+  margin: 0;                  /* elimina márgenes por defecto */
+  font-weight: normal;        /* texto con peso normal */
+}
+
+/* ======= CUERPO (BODY) ======= */
+body {
+  min-height: 100vh;                       /* ocupa al menos toda la altura de la ventana */
+  color: var(--color-text);                /* usa el color de texto definido arriba */
+  background: var(--color-background);     /* usa el color de fondo */
+  transition:                              /* transición suave al cambiar colores */
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;                        /* separación entre líneas del texto */
+  font-family:                             /* fuentes que usa la página */
+     Inter,                                 /* Fuente moderna y legible creada por Rasmus Andersson, muy usada en interfaces modernas (por ejemplo, Vite o GitHub la usan). */
+  -apple-system,                         /* Fuente del sistema de Apple (en macOS y iOS), generalmente San Francisco. Asegura que se vea nativa en dispositivos Apple. */
+  BlinkMacSystemFont,                    /* Fuente del sistema en navegadores basados en Chromium en macOS (Chrome/Edge). También usa San Francisco. */
+  'Segoe UI',                            /* Fuente por defecto de Windows desde Windows Vista (usada en menús, títulos, etc.). */
+  Roboto,                                /* Fuente de Google usada en Android y Material Design, muy común en sitios modernos. */
+  Oxygen,                                /* Fuente del entorno de escritorio KDE en Linux, usada por defecto en ese sistema. */
+  Ubuntu,                                /* Fuente oficial de la distribución Ubuntu de Linux, optimizada para pantallas. */
+  Cantarell,                             /* Fuente del entorno GNOME (otra interfaz de Linux), moderna y legible. */
+  'Fira Sans',                           /* Fuente creada para Mozilla Firefox OS; se usa mucho en web por su claridad. */
+  'Droid Sans',                          /* Fuente de Android más antigua, usada antes de Roboto. */
+  'Helvetica Neue',                      /* Fuente clásica de Apple (anterior a San Francisco), también muy legible y neutra. */
+  sans-serif;                            /* Familia genérica: si ninguna de las anteriores está disponible, usa cualquier fuente sin remates. */
+  font-size: 15px;                         /* tamaño de fuente base */
+  text-rendering: optimizeLegibility;      /* mejora la legibilidad del texto */
+  -webkit-font-smoothing: antialiased;     /* suaviza bordes de texto en Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale;      /* suaviza texto en Firefox/Mac */
+}
+
+/* ======= LISTAS ======= */
+li {
+  list-style: none; /* quita los puntos o numeración de las listas */
+}
+/*Agregado en el capitulo 5*/
+/*Estas son las reglas globales de la etiqueta section del main en App.vue*/
+section {
+  padding: 2rem;
+  border-bottom: 1px solid #ccc;
+  margin: 3rem 0rem 2rem 0rem;
+}
+section h2{
+  font-size: 2rem;
+  color: aliceblue;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+section h3{
+  color: rgb(209, 183, 148);
+}
