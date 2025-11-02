@@ -16,24 +16,24 @@ misProyectos.value = ([
         src: proyecto1,
         titulo: "Team mate Manager (2023)",
         descripcion: "Cree una aplicación web desarrollada para gestionar de manera integral un emprendimiento de venta de mates artesanales. Permite administrar clientes, ventas y stock de productos, conectando con la tienda online de Instagram y Tienda Nube.",
-        projectoLink: "https://www.google.com.ar",
-        githubLink: "https://github.com/usuario/proyecto"
+        projectoLink: "https://github.com/LivaMolina/Portafolio---Vuejs/blob/main/Proyectos/TeamMate/readme.md",
+        githubLink: "https://www.google.com.ar"
     },
     {
         id: 2,
         src: proyecto2,
         titulo: "MercadoShop (2022)",
         descripcion: "MercadoShop es una aplicación web tipo marketplace desarrollada para conectar pequeños vendedores con compradores en un entorno simple, seguro y ágil. El sistema permite publicar productos, gestionar inventario, procesar pagos simulados y administrar ventas desde un panel personalizado.",
-        projectoLink: "https://www.google.com.ar",
-        githubLink: "https://github.com/usuario/proyecto"
+        projectoLink: "https://github.com/LivaMolina/Portafolio---Vuejs/blob/main/Proyectos/MercadoShop/readme.md",
+        githubLink: "https://www.google.com.ar"
     },
     {
         id: 3,
         src: proyecto3,
         titulo: "FinanzasYA (2022)",
         descripcion: "Cree una aplicación web moderna para el control de ingresos y gastos personales. Permite registrar transacciones, visualizar gráficos financieros interactivos y analizar el rendimiento mensual de manera sencilla e intuitiva",
-        projectoLink: "https://www.google.com.ar",
-        githubLink: "https://github.com/usuario/proyecto"
+        projectoLink: "https://github.com/LivaMolina/Portafolio---Vuejs/blob/main/Proyectos/FinanzasYA/readme.md",
+        githubLink: "https://www.google.com.ar"
     },
    
 ])
